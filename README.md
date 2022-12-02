@@ -1,4 +1,4 @@
-❄️ Andrei's 2022 Advent of Code ❄️
+# ❄️ Andrei's 2022 Advent of Code ❄️
 
 [![Build Status](https://github.com/AndreiBarsan/2022-advent-of-code/actions/workflows/aoc-ci-build.yml/badge.svg)](https://github.com/AndreiBarsan/2022-advent-of-code/actions/workflows/aoc-ci-build.yml)
 
