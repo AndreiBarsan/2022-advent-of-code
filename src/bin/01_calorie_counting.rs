@@ -19,7 +19,7 @@ fn day_01_calorie_counting() -> (i64, i64) {
     let mut cur_calories: i64 = -2;
 
     for entry in data.lines() {
-        if entry.len() == 0 {
+        if entry.is_empty() {
             if cur_calories > max_calories {
                 max_calories = cur_calories;
             }
@@ -37,7 +37,7 @@ fn day_01_calorie_counting() -> (i64, i64) {
             }
             cur_calories = 0;
         } else {
-            cur_calories += i64::from_str_radix(entry, 10).unwrap();
+            cur_calories += entry.parse::<i64>().unwrap();
         }
     }
 
