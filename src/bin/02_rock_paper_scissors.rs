@@ -81,15 +81,13 @@ fn day_02_rock_paper_scissors() -> (i64, i64) {
     let input = fs::read_to_string(in_fpath).unwrap();
 
     let part1_answer = input
-        .clone()
-        .split("\n")
+        .split('\n')
         .map(parse_innocent_line)
         .map(|(l, r)| score(&l, &r))
         .sum();
 
     let part2_answer = input
-        .clone()
-        .split("\n")
+        .split('\n')
         .map(parse_fixed_match_line)
         .map(|(l, r)| score(&l, &r))
         .sum();
