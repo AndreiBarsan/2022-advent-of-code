@@ -29,7 +29,6 @@ fn parse_ranges(input: &str) -> (ElfRange, ElfRange) {
 }
 
 fn day_04_camp_cleanup() -> (i64, i64) {
-    let a = 0..2;
     let in_fpath = "input/04.txt";
     let ranges: Vec<(ElfRange, ElfRange)> = fs::read_to_string(in_fpath)
         .expect("Could not read input file!")
@@ -37,16 +36,15 @@ fn day_04_camp_cleanup() -> (i64, i64) {
         .map(parse_ranges)
         .collect();
 
-    let part1_fully_contain: Vec<(ElfRange, ElfRange)> = ranges
+    let part1_fully_contain = ranges
         .clone()
         .into_iter()
-        .filter(|(l, r)| contains(l, r) || contains(r, l))
-        .collect();
+        .filter(|(l, r)| contains(l, r) || contains(r, l));
 
-    let part_2_overlap_at_all = ranges.clone().into_iter().filter(|(l, r)| overlap(l, r));
+    let part_2_overlap_at_all = ranges.into_iter().filter(|(l, r)| overlap(l, r));
 
     (
-        part1_fully_contain.len() as i64,
+        part1_fully_contain.count() as i64,
         part_2_overlap_at_all.count() as i64,
     )
 }
