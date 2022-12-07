@@ -29,6 +29,7 @@ fn parse_state(lines: &[String]) -> Shipyard {
                 while crates.len() <= idx {
                     crates.push(Vec::new());
                 }
+                // Safe to unwrap, as the loop above guarantees we'll have enough sub-vectors.
                 crates.get_mut(idx).unwrap().push(ch);
             } else {
                 panic!("Invalid character {} in line {}", ch, line);
