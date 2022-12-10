@@ -4,6 +4,7 @@
 
 ## Learning Goals
 
+- [ ] Finish the first 12 days for Rust practice
 - [ ] Rust <> C++ interop
 - [ ] Actually understand Rust-y implementations of cyclic data structures
 
